@@ -15,4 +15,6 @@ func main() {
 	iago.StructExample()
 	iago.StructWithMethodsExample()
 	iago.ListExample()
+	iago.QueueExample()
+	iago.BoundedQueueExample()
 }
