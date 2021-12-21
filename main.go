@@ -20,4 +20,5 @@ func main() {
 	iago.BSTExample()
 	//iago.FanInExample()
 	//iago.FanOutExample()
+	iago.WorkerPoolExample()
 }
