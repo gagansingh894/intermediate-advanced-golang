@@ -17,4 +17,7 @@ func main() {
 	iago.ListExample()
 	iago.QueueExample()
 	iago.BoundedQueueExample()
+	iago.BSTExample()
+	//iago.FanInExample()
+	//iago.FanOutExample()
 }
