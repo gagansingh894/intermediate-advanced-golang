@@ -8,6 +8,42 @@ type Node struct {
 	previous *Node
 }
 
+type BSTNode struct {
+	value int
+	left *BSTNode
+	right *BSTNode
+}
+
+func (n *BSTNode) insert(value int) {
+	newNode := &BSTNode{
+		value: value,
+		left:  nil,
+		right: nil,
+	}
+	if value <= n.value {
+		if n.left == nil {
+			n.left = newNode
+		} else {
+			n.left.insert(value)
+		}
+	} else {
+		if n.right == nil {
+				n.right = newNode
+		} else {
+			n.right.insert(value)
+		}
+	}
+}
+
+func printNode(n *BSTNode) {
+	if n == nil {
+		return
+	}
+	println(n.value)
+	printNode(n.left)
+	printNode(n.right)
+}
+
 type List struct {
 	head *Node
 	length int
@@ -25,6 +61,25 @@ type BoundedQueue struct {
 	size int
 	elements chan interface{}
 }
+
+type BST struct {
+	node *BSTNode
+}
+
+func (b *BST) insert(value int) *BST {
+	if b.node == nil {
+		newNode := &BSTNode{
+			value: value,
+			left:  nil,
+			right: nil,
+		}
+		b.node = newNode
+	} else  {
+		b.node.insert(value)
+	}
+	return b
+}
+
 
 func (l *List) First() *Node {
 	return l.head
@@ -162,5 +217,10 @@ func BoundedQueueExample(){
 	fmt.Println(qb.elements)
 	fmt.Println(qb.Dequeue())
 	fmt.Println(qb.Dequeue())
+}
 
+func BSTExample() {
+	bst := BST{}
+	bst.insert(7).insert(4).insert(9).insert(2)
+	printNode(bst.node)
 }
