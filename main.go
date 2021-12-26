@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	iago "go-ia/concepts"
+	iagoPC "go-ia/patterns/creational"
+	iagoPS "go-ia/patterns/structural"
 )
+
 
 func main() {
 	fmt.Println("Hello World!")
@@ -20,5 +23,10 @@ func main() {
 	iago.BSTExample()
 	//iago.FanInExample()
 	//iago.FanOutExample()
-	iago.WorkerPoolExample()
+	//iago.WorkerPoolExample()
+	iagoPC.SingletonExample()
+	iagoPC.BuilderExample()
+	iagoPC.FactoryExample()
+	iagoPC.AbstractFactoryExample()
+	iagoPS.AdapterExample()
 }
